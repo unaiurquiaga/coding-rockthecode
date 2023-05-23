@@ -1,0 +1,151 @@
+/* Estilos generales */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+    background-color: var(--color-fondo);
+}
+/* Variables */
+:root {
+  --color-primario: #393f4d;
+  --color-secundario: #FF7755;
+  --color-fondo: #bccbde;
+  --color-texto: #000000;
+  --color-enlace: #0000FF;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
+  
+}
+.navegacion-principal {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+   background-color: var(--color-secundario);
+  
+
+}
+.navegacion-principal > ul {
+  display: flex;
+  list-style: none;
+  
+}
+.navegacion-principal > li {
+  margin-right: 10px;
+}
+section {
+  text-align: center;
+  margin-bottom: 20px;
+  
+}
+.Playas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.zona {
+  flex: 0  0  calc(40% - 20px);
+  margin: 10px;
+}
+.foto-playa {
+  background-color: var(--color-fondo);
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Texto */
+h1, h2, h3, p, span {
+  color: var(--color-texto);
+}
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  padding: 50px;
+}
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+}
+
+/* Media queries para dispositivos móviles */
+@media only screen and (max-width: 375px) {
+  .container {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+  
+  h3 {
+    font-size: 16px;
+  }
+  
+  p {
+    font-size: 14px;
+  }
+  
+  .Playas {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .zona {
+    flex: 0 0 calc(100% - 20px);
+  }
+}
+
+/* Media queries para tablets */
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+  .Playas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .zona {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+/* Media queries para escritorios */
+@media only screen and (min-width: 768px) {
+  .Playas {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .zona {
+    flex: 0 0 calc(20% - 20px);
+  }
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
